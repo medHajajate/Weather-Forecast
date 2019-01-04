@@ -19,6 +19,10 @@
 		2BA740C521DFBD9B008F1E40 /* WeatherDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA740C421DFBD9B008F1E40 /* WeatherDetailsPresenter.swift */; };
 		2BA740C721DFBDA2008F1E40 /* WeatherDetails.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2BA740C621DFBDA2008F1E40 /* WeatherDetails.storyboard */; };
 		2BA740C921DFBDE4008F1E40 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA740C821DFBDE4008F1E40 /* APIManager.swift */; };
+		2BA740CC21DFFF37008F1E40 /* CityWeatherViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA740CB21DFFF37008F1E40 /* CityWeatherViewCell.swift */; };
+		2BA740CE21E00016008F1E40 /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA740CD21E00016008F1E40 /* City.swift */; };
+		2BA740D021E0009B008F1E40 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA740CF21E0009B008F1E40 /* Weather.swift */; };
+		2BA740D221E00F03008F1E40 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA740D121E00F03008F1E40 /* Extensions.swift */; };
 		368CB52CE7956023B236ADAE /* Pods_Weather_ForecastTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7327ADDD24A6C817EB369D35 /* Pods_Weather_ForecastTests.framework */; };
 		70BB077BCD56225A7FF14984 /* Pods_Weather_Forecast.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FF1A29523A43D3ED1170129 /* Pods_Weather_Forecast.framework */; };
 		C145DDE701DD799E80810181 /* Pods_Weather_ForecastUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92238F7BC235BA06A30B8A3F /* Pods_Weather_ForecastUITests.framework */; };
@@ -64,6 +68,10 @@
 		2BA740C421DFBD9B008F1E40 /* WeatherDetailsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDetailsPresenter.swift; sourceTree = "<group>"; };
 		2BA740C621DFBDA2008F1E40 /* WeatherDetails.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WeatherDetails.storyboard; sourceTree = "<group>"; };
 		2BA740C821DFBDE4008F1E40 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		2BA740CB21DFFF37008F1E40 /* CityWeatherViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityWeatherViewCell.swift; sourceTree = "<group>"; };
+		2BA740CD21E00016008F1E40 /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
+		2BA740CF21E0009B008F1E40 /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
+		2BA740D121E00F03008F1E40 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		3599A6F2862FB939F2E5B8EF /* Pods-Weather ForecastUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Weather ForecastUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Weather ForecastUITests/Pods-Weather ForecastUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		5FF1A29523A43D3ED1170129 /* Pods_Weather_Forecast.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Weather_Forecast.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7327ADDD24A6C817EB369D35 /* Pods_Weather_ForecastTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Weather_ForecastTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -192,6 +200,8 @@
 		2BA740B821DFBB17008F1E40 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				2BA740CD21E00016008F1E40 /* City.swift */,
+				2BA740CF21E0009B008F1E40 /* Weather.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -199,6 +209,7 @@
 		2BA740B921DFBB62008F1E40 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				2BA740D121E00F03008F1E40 /* Extensions.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -206,6 +217,7 @@
 		2BA740BA21DFBB95008F1E40 /* CitiesList */ = {
 			isa = PBXGroup;
 			children = (
+				2BA740CA21DFFF15008F1E40 /* Cell */,
 				2BA740BC21DFBC29008F1E40 /* CitiesListViewController.swift */,
 				2BA740BE21DFBD63008F1E40 /* CitiesListPresenter.swift */,
 				2BA740C021DFBD6D008F1E40 /* CitiesList.storyboard */,
@@ -221,6 +233,14 @@
 				2BA740C621DFBDA2008F1E40 /* WeatherDetails.storyboard */,
 			);
 			path = "WeatherDetails ";
+			sourceTree = "<group>";
+		};
+		2BA740CA21DFFF15008F1E40 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				2BA740CB21DFFF37008F1E40 /* CityWeatherViewCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		994F1E816C9B0A0DA6775698 /* Pods */ = {
@@ -444,12 +464,14 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Weather Forecast/Pods-Weather Forecast-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -466,8 +488,12 @@
 				2BA740C921DFBDE4008F1E40 /* APIManager.swift in Sources */,
 				2BA7408821DFB69E008F1E40 /* AppDelegate.swift in Sources */,
 				2BA740C521DFBD9B008F1E40 /* WeatherDetailsPresenter.swift in Sources */,
+				2BA740CC21DFFF37008F1E40 /* CityWeatherViewCell.swift in Sources */,
+				2BA740D021E0009B008F1E40 /* Weather.swift in Sources */,
 				2BA740BD21DFBC29008F1E40 /* CitiesListViewController.swift in Sources */,
+				2BA740D221E00F03008F1E40 /* Extensions.swift in Sources */,
 				2BA740C321DFBD8D008F1E40 /* WeatherDetailsViewController.swift in Sources */,
+				2BA740CE21E00016008F1E40 /* City.swift in Sources */,
 				2BA740BF21DFBD63008F1E40 /* CitiesListPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

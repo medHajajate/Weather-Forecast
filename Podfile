@@ -8,6 +8,7 @@ target 'Weather Forecast' do
   # Pods for Weather Forecast
 
     pod 'Alamofire'
+    pod 'SDWebImage'
 
   target 'Weather ForecastTests' do
     inherit! :search_paths
