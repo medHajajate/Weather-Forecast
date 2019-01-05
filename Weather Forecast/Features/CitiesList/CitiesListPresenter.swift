@@ -13,6 +13,7 @@ protocol  CitiesListPresenterDelegate: class {
     func startIndicator()
     func stopIndicator()
     func displayError(_ error: Error)
+    func endRefreshing()
 }
 
 class CitiesListPresenter {
@@ -43,6 +44,18 @@ class CitiesListPresenter {
         self.delegate?.stopIndicator()
         delegate?.reloadData()
     }
+    
+    private func refreshList() {
+        let idsCities = cities.map{ String($0.id) }
+        APIManager.requestCitiesWeather(idsCities, success: { weathers in
+            self.setupStatusCities(weathers: weathers)
+            self.delegate?.endRefreshing()
+        }, failure: { error in
+            self.delegate?.displayError(error)
+            self.delegate?.endRefreshing()
+        })
+
+    }
 }
 
 extension CitiesListPresenter {
@@ -61,6 +74,10 @@ extension CitiesListPresenter {
     
     func viewDidLoad() {
         loadList()
+    }
+    
+    func refreshData() {
+        refreshList()
     }
 }
 

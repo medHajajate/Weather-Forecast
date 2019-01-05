@@ -13,6 +13,7 @@ protocol  WeatherDetailsPresenterDelegate: class {
     func startIndicator()
     func stopIndicator()
     func displayError(_ error: Error)
+    func endRefreshing()
 }
 
 class WeatherDetailsPresenter {
@@ -36,6 +37,19 @@ class WeatherDetailsPresenter {
         }, failure: { error in
             self.delegate?.stopIndicator()
             self.delegate?.displayError(error)
+        })
+    }
+    
+    private func refreshDetails() {
+        guard let id = city?.id else { return }
+        APIManager.getDetailWeather(cityId: String(id), success: { weathers in
+            if weathers.count > 0 {
+                self.get5daysWeathers(weathers: weathers)
+            }
+            self.delegate?.endRefreshing()
+        }, failure: { error in
+            self.delegate?.displayError(error)
+            self.delegate?.endRefreshing()
         })
     }
     
@@ -65,5 +79,9 @@ extension WeatherDetailsPresenter {
     
     func viewDidLoad() {
         loadDetails()
+    }
+    
+    func refreshData() {
+        refreshDetails()
     }
 }

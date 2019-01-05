@@ -14,8 +14,17 @@ class CitiesListViewController: UIViewController {
     
     private  var presenter = CitiesListPresenter()
     
+    lazy var refreshControl: UIRefreshControl = {
+        let refreshControl = UIRefreshControl()
+        refreshControl.attributedTitle = NSAttributedString(string: "Fetching Weather Data ...", attributes: nil)
+        refreshControl.tintColor = UIColor(red:0.25, green:0.72, blue:0.85, alpha:1.0)
+        refreshControl.addTarget(self, action: #selector(refreshWeatherData), for: .valueChanged)
+        return refreshControl
+    }()
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.refreshControl = refreshControl
         presenter.setDelegate(delegate: self)
         presenter.viewDidLoad()
     }
@@ -25,6 +34,10 @@ class CitiesListViewController: UIViewController {
             let details = segue.destination as! WeatherDetailsViewController
             details.presenter.city = sender as? City
         }
+    }
+    
+    @objc private func refreshWeatherData() {
+        self.presenter.refreshData()
     }
 }
 
@@ -70,4 +83,9 @@ extension CitiesListViewController: CitiesListPresenterDelegate {
     func displayError(_ error: Error) {
         self.showError(error: error)
     }
+    
+    func endRefreshing() {
+        self.refreshControl.endRefreshing()
+    }
+
 }
