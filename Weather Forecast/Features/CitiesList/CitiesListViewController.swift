@@ -19,6 +19,13 @@ class CitiesListViewController: UIViewController {
         presenter.setDelegate(delegate: self)
         presenter.viewDidLoad()
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showDetails" {
+            let details = segue.destination as! WeatherDetailsViewController
+            details.presenter.city = sender as? City
+        }
+    }
 }
 
 extension CitiesListViewController: UITableViewDataSource {
@@ -42,6 +49,7 @@ extension CitiesListViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        performSegue(withIdentifier: "showDetails", sender: self.presenter.city(index: indexPath.row))
     }
     
 }

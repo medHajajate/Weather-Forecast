@@ -16,6 +16,7 @@ struct Weather: Codable {
 }
 
 struct WeatherCity: Codable {
+    let dt: Double?
     let main: Temperature?
     let weather: [Weather]?
     let wind: Wind?

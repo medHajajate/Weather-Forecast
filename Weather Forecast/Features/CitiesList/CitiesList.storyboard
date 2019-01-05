@@ -119,11 +119,20 @@
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="J9u-ho-up0" id="7y9-r1-4Av"/>
+                        <segue destination="eGk-go-WFl" kind="show" identifier="showDetails" id="1cV-aa-Wtu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3s1-5l-gv9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1168.8" y="-45.42728635682159"/>
+            <point key="canvasLocation" x="1030" y="-45"/>
+        </scene>
+        <!--WeatherDetails-->
+        <scene sceneID="WDV-6W-D9H">
+            <objects>
+                <viewControllerPlaceholder storyboardName="WeatherDetails" id="eGk-go-WFl" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JVH-50-xc1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1777" y="-46"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Efg-Vc-IzK">
