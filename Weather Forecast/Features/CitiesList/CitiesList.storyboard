@@ -116,6 +116,11 @@
                     </view>
                     <navigationItem key="navigationItem" title="Weather" id="ioN-R2-p87">
                         <barButtonItem key="backBarButtonItem" title=" " id="4zb-Cq-4VF"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="ydu-zc-eC5">
+                            <connections>
+                                <segue destination="rN6-OP-sl4" kind="presentation" identifier="AddCity" id="XbB-ht-jb0"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="J9u-ho-up0" id="7y9-r1-4Av"/>
@@ -126,13 +131,21 @@
             </objects>
             <point key="canvasLocation" x="1030" y="-45"/>
         </scene>
+        <!--AddCity-->
+        <scene sceneID="YCb-8F-aJY">
+            <objects>
+                <viewControllerPlaceholder storyboardName="AddCity" id="rN6-OP-sl4" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ezu-Mc-Wud" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1809" y="-69"/>
+        </scene>
         <!--WeatherDetails-->
         <scene sceneID="WDV-6W-D9H">
             <objects>
                 <viewControllerPlaceholder storyboardName="WeatherDetails" id="eGk-go-WFl" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JVH-50-xc1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1777" y="-46"/>
+            <point key="canvasLocation" x="1809" y="-25"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Efg-Vc-IzK">

@@ -27,6 +27,7 @@ struct WeatherCity: Codable {
 
 struct WeatherList: Codable {
     let cnt: Int?
+    let cod: String?
     let list: [WeatherCity]?
 }
 
@@ -41,4 +42,12 @@ struct Temperature: Codable {
 struct Wind: Codable {
     let speed: Double?
     let deg: Double?
+}
+
+struct weatherSearch: Codable {
+    let id: Double?
+    let message: String?
+    let name: String?
+    let weather: [Weather]?
+    let main: Temperature?
 }

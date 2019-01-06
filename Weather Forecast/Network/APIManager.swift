@@ -45,4 +45,21 @@ class APIManager {
             }
         }
     }
+    
+    static func searchCity(city: String, success:@escaping (weatherSearch) -> Void, failure:@escaping (Error) -> Void) {
+        let requestURL = APIManager.urlAPI + "weather?q=" + city + "&cnt=40&appid=" + APIManager.apiKey
+        print(requestURL)
+        Alamofire.request(requestURL).responseJSON { (response) -> Void in
+            
+            let json = response.data
+            do{
+                let decoder = JSONDecoder()
+                let response = try decoder.decode(weatherSearch.self, from: json!)
+                success(response)
+            }catch let error {
+                failure(error)
+            }
+        }
+
+    }
 }

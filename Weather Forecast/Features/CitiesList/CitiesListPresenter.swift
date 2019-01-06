@@ -79,5 +79,11 @@ extension CitiesListPresenter {
     func refreshData() {
         refreshList()
     }
+    
+    func addNewCity(city: City) {
+        guard !cities.contains(where: { $0.name == city.name }) else { return }
+        self.cities.append(city)
+        self.delegate?.reloadData()
+    }
 }
 

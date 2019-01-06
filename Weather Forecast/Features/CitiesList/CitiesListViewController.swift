@@ -30,9 +30,19 @@ class CitiesListViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showDetails" {
+        switch segue.identifier {
+        case "showDetails":
             let details = segue.destination as! WeatherDetailsViewController
             details.presenter.city = sender as? City
+        case "AddCity":
+            let navBarController = segue.destination as! UINavigationController
+            let addCityController = navBarController.topViewController as! AddCityViewController
+            addCityController.onAdd = { city in
+                self.presenter.addNewCity(city: city)
+                addCityController.dismiss()
+            }
+        default:
+            break
         }
     }
     
