@@ -72,6 +72,10 @@ extension CitiesListPresenter {
         return cities[index]
     }
     
+    func removeCity(index: Int) {
+        cities.remove(at: index)
+    }
+    
     func viewDidLoad() {
         loadList()
     }

@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Weather Forecast/Features/CitiesList/CitiesListViewController.swift"
-            timestampString = "568433328.7137769"
+            timestampString = "568433570.6177959"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "78"
-            endingLineNumber = "78"
+            startingLineNumber = "85"
+            endingLineNumber = "85"
             landmarkName = "CitiesListViewController"
             landmarkType = "21">
          </BreakpointContent>
@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Weather Forecast/Features/CitiesList/CitiesListPresenter.swift"
-            timestampString = "568433328.713881"
+            timestampString = "568433570.618223"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "84"
-            endingLineNumber = "84"
+            startingLineNumber = "88"
+            endingLineNumber = "88"
             landmarkName = "addNewCity(city:)"
             landmarkType = "7">
             <Locations>

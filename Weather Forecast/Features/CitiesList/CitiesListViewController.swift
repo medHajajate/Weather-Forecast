@@ -75,6 +75,13 @@ extension CitiesListViewController: UITableViewDelegate {
         performSegue(withIdentifier: "showDetails", sender: self.presenter.city(index: indexPath.row))
     }
     
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            presenter.removeCity(index: indexPath.row)
+            self.tableView.deleteRows(at: [indexPath], with: .left)
+        }
+    }
+    
 }
 
 extension CitiesListViewController: CitiesListPresenterDelegate {
