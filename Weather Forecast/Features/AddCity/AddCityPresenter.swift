@@ -19,7 +19,8 @@ class AddCityPresenter {
     private weak var delegate: AddCityPresenterDelegate?
     
     func searchCity(city: String) {
-        APIManager.searchCity(city: city, success: { weather in
+        let cityName = city.replacingOccurrences(of: " ", with: "+")
+        APIManager.searchCity(city: cityName, success: { weather in
             if weather.message == "city not found" {
                 self.delegate?.displayNotFound()
             } else {
